@@ -1,3 +1,7 @@
+from moviepy.editor import *
+from moviepy.video.compositing.concatenate import concatenate_videoclips
+
+# Load the video
 video = VideoFileClip("pvideo.mp4")
 
 # Define the text and its timings
@@ -16,7 +20,8 @@ with open("timestamped.txt", "r") as file:
 
 # Function to generate text clip
 def generate_text_clip(text, duration):
-    return TextClip(text, fontsize=50, color='white', bg_color='black').set_duration(duration)
+    #return TextClip(text, fontsize=50, color='white', bg_color='black').set_duration(duration)
+    return TextClip(text, fontsize=50, color='grey', font="8514OEM").set_duration(duration)
 
 # Add text clips to the video
 clips = []
@@ -40,7 +45,7 @@ for i in range(0, len(text_clips) - 3, 4):
 
     # Generate the text clip
     text_clip = generate_text_clip(combined_text, combined_end - combined_start)
-    text_clip = text_clip.set_start(0).set_position(('center', 'bottom'))
+    text_clip = text_clip.set_start(0).set_position('center')
 
     # Add the text to the video clip
     video_clip_with_text = CompositeVideoClip([video_clip, text_clip])
