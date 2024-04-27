@@ -11,13 +11,17 @@ with open("timestamped.txt", "r") as file:
     f = file.read()
     lines = f.split("\n")
     for line in lines:
-        print(line)
-        lsplit = line.split(",")
-        word = str(lsplit[0])
-        stime = float(lsplit[1])
-        etime = float(lsplit[2])
-        text_clips.append({"text": word, "start": stime, "end": etime})
-
+        try:
+            lsplit = line.split(",")
+            word = str(lsplit[0])
+            stime = float(lsplit[1])
+            etime = float(lsplit[2])
+            text_clips.append({"text": word, "start": stime, "end": etime})
+        except IndexError:
+            pass
+        except:
+            print("unexpected error")
+            pass
 # Function to generate text clip
 def generate_text_clip(text, duration):
     #return TextClip(text, fontsize=50, color='white', bg_color='black').set_duration(duration)
