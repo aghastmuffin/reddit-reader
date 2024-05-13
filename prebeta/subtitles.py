@@ -1,6 +1,6 @@
 from moviepy.editor import *
 from moviepy.video.compositing.concatenate import concatenate_videoclips
-
+print("THIS FILE IS CURRENTLY: NOT FUNCTIONAL. PLEASE DO NOT USE THIS UNTIL AN UPDATE IS PUSHED. NON BETA VERSIONS WILL WORK FINE")
 # Load the video
 video = VideoFileClip("pvideo.mp4")
 
