@@ -12,3 +12,5 @@ But whatever the case, run it in this order:
  - redditv3.py
  - vosktst.py
  - subtitler.py
+---
+We also now have a [website](https://aghastmuffin.github.io/reddit-reader/) where you can download reddit-reader (latest). It's pretty basic right now, but I'm planning to get some more done soon.
