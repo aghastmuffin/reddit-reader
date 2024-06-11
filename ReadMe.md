@@ -14,3 +14,7 @@ But whatever the case, run it in this order:
  - subtitler.py
 ---
 We also now have a [website](https://aghastmuffin.github.io/reddit-reader/) where you can download reddit-reader (latest). It's pretty basic right now, but I'm planning to get some more done soon.
+
+Use at your own risk!
+---
+This program does NOT use the [official Reddit api](https://www.reddit.com/dev/api/) as during April 2023 the api has started charging per request. I personally disagree with this so it uses my very own API wrapper. This may cause reddit to detect that you are trying to bypass their api. If this happens, just chill, try again tomorrow, maybe navigate to the main site and interact with it like a user would. Reddit also blocks VPNS from accessing their site as a general rule, so trying to use a vpn will return a 403 error (or equivalent).
