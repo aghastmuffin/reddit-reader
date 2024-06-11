@@ -12,6 +12,7 @@ But whatever the case, run it in this order:
  - redditv3.py
  - vosktst.py
  - subtitler.py
+you may change the font in the Python file (pre pyinstaller) to fit your font needs, but by default it uses a font that I provide. You can get that [here](https://aghastmuffin.github.io/extrafonts/8514OEM.ttf)
 ---
 We also now have a [website](https://aghastmuffin.github.io/reddit-reader/) where you can download reddit-reader (latest). It's pretty basic right now, but I'm planning to get some more done soon.
 
