@@ -1,12 +1,4 @@
 """포스터야 위해"""
-#implementation
-#downloader: 100%
-#subtitlepre: 1%
-#Subtitler: 0%
-#TESTED
-#downloader: N
-#subtitlepre: N
-#Subtitler: N
 #============================imports=============================
 import tkinter as tk
 import customtkinter as ctk
@@ -277,7 +269,11 @@ def start_second():
     start_third()
 def generate_text_clip(text, duration):
     #return TextClip(text, fontsize=50, color='white', bg_color='black').set_duration(duration)
-    return TextClip(text, fontsize=50, color='grey', font="8514OEM", bg_color="black").set_duration(duration)
+    selected_font = font_pick.get()
+    if selected_font != None and selected_font != "":
+        return TextClip(text, fontsize=50, color='grey', font=f"{selected_font}", bg_color="black").set_duration(duration)
+    else:
+        return TextClip(text, fontsize=50, color='grey', font="8514OEM", bg_color="black").set_duration(duration)
 def start_third():
     video = VideoFileClip("pvideo.mp4")
 
