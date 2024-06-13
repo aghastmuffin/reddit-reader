@@ -15,7 +15,7 @@ function dwnld(url) {
     // Append the paragraph to the body of the document
     document.body.appendChild(paragraph);
 };
-function downloadraw(url) {
+function downloadraw(url, friendlyname) {
     fetch(url)
         .then(response => response.text())
         .then(data => {
@@ -24,7 +24,7 @@ function downloadraw(url) {
             const a = document.createElement('a');
             a.style.display = 'none';
             a.href = url;
-            a.download = 'guiv2.py';
+            a.download = friendlyname;
             document.body.appendChild(a);
             a.click();
             window.URL.revokeObjectURL(url);
