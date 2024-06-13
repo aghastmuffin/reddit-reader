@@ -1,12 +1,4 @@
 """포스터야 위해"""
-#implementation
-#downloader: 100%
-#subtitlepre: 100%
-#Subtitler: 25%
-#TESTED
-#downloader: Y
-#subtitlepre: Y
-#Subtitler: N
 #============================imports=============================
 import tkinter as tk
 import customtkinter as ctk
@@ -96,6 +88,10 @@ def on_radiobutton_change():
 def reddit_click_callback(*args):
     if reddit_get_clicked.get() == "Custom Subreddit":
         L_placeholder.configure(state="normal", height=10)
+def lastmsg(*args):
+    messagebox.showwarning("Remember this!", "Please remember to drag the stuff you want to keep from this session into another folder, as on running this script, the files that have been generated will be cleared to save storage. (simply create a folder called saved or whatever, and store your files you wish to keep from this session there. (this only applies to the files that this program DIRECTLY generated.)")
+    root.destroy()
+    sys.exit()
 def start():
     url = requests.get(url=(L_placeholder.get("1.0", "end-1c") + ".json"), headers=headers)
     print((L_placeholder.get("1.0", "end-1c") + ".json"))
@@ -375,7 +371,8 @@ if __name__ == "__main__":
     L_placeholder.pack(anchor="w", pady=10, padx=20)
     font_pick_info.pack(anchor="w", pady=10)
     font_pick.pack(anchor="w")
-    font_pick.bind('<KeyRelease>', check_input)
+    font_pick_info.bind('<Destroy>', lastmsg)
+    L_placeholder.bind('<KeyRelease>', check_input)
     on_radiobutton_change()
     for option in YT_options:
         rb = ctk.CTkRadioButton(root, text=option, value=option, variable=YT_selected_var, command=on_radiobutton_change)
@@ -385,7 +382,7 @@ if __name__ == "__main__":
             entry.pack(anchor=tk.W, padx=20)  # Indent entry slightly
             YT_entries.append(entry)
             YT_entry_dict[option] = entry
-
+    
     showpth.pack(anchor="w", pady=10)
     button2.pack(pady=20)
     cons.pack()
