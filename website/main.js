@@ -15,3 +15,19 @@ function dwnld(url) {
     // Append the paragraph to the body of the document
     document.body.appendChild(paragraph);
 };
+function downloadraw(url) {
+    fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            const blob = new Blob([data], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = 'guiv2.py';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+        })
+        .catch(error => console.error('Error downloading the file:', error));
+}
