@@ -1,0 +1,1 @@
+This is similar, infact it is the same as the gui.py, except it uses custom styling that you can customize with any tcl file! (some tcl files might break certain aspects of the project, changing size, so some might look bad, or not work at all (if they don't, just edit the combobox to be normal, and style yourself.)
