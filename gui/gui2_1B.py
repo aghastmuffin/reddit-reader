@@ -15,7 +15,6 @@
 #added ability to choose voice
 #removed unnecesary proprietary library: fontfinder
 #made more efficent, removed first unnecesary concatenate.
-#added ollama ai (requires you to install ollama @https://ollama.com/ for ai commentary
 print("RedditReaderV2(GUI) - by u/aghastmuffin")
 print("This program is attempting to start up. Please wait. (avg 1-4 seconds for initializing.)")
 #============================imports=============================
