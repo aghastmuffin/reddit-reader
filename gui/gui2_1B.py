@@ -4,6 +4,17 @@
 #2. Add a loading bar for the video processing to show that the program is working.
 #3. Add only one encoding (finializing the video) (OPTIMIZE!!!!)
 #4.Add functionality for a queue, also add a "previously played" list of urls (more exactly their hashes using a minimal hashing algorithm.)
+#5. Get MOVIEPY loading > loadingbar
+#6. Let user know what is happening with label above loading bar
+#7. add total progress loading bar
+#Changelog: (since GUIv2)
+#added warn at start to assure user program is running
+#remove start button once clicked in favor of loading bar
+#added better font-searching
+#added font-showcase
+#added ability to choose voice
+#removed unnecesary proprietary library: fontfinder
+#made more efficent, removed first unnecesary concatenate.
 print("RedditReaderV2(GUI) - by u/aghastmuffin")
 print("This program is attempting to start up. Please wait. (avg 1-4 seconds for initializing.)")
 #============================imports=============================
