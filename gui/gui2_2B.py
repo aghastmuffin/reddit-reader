@@ -608,6 +608,13 @@ if __name__ == "__main__":
     font_pick = ttk.Combobox(root, values=f_lst)
     use_ai_chk = tk.IntVar()
     use_ai = ttk.Checkbutton(root, text="Use AI to generate commentary", variable=use_ai_chk, onvalue=1, offvalue=0)
+    try:
+        os.system("ollama")
+    except:
+        try:
+            os.system("ollama.exe")
+        except:
+            use_ai.configure(state="disabled")
     f_sample_txt = tk.Label(root, text="Sample Text", font=("system", 12))
     font_pick.bind('<<ComboboxSelected>>', showcase_fnt)
     font_pick.bind('<KeyRelease>', check_font_input) #currently only works by scanning entire string, we just want startswith
