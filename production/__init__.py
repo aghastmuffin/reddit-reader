@@ -1,1 +1,1 @@
-import reddit_reader
+import RedditReader
