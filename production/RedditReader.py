@@ -9,10 +9,21 @@ from moviepy.video.compositing.concatenate import concatenate_videoclips
 from vosk import SetLogLevel, KaldiRecognizer, Model
 import ctypes
 from ctypes import wintypes
+from moviepy.config import ImageMagickTools
+import webbrowser
 
 headers = {'User-Agent': r'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
 
-
+if ImageMagickTools.available():
+    print("ImageMagick is installed on the system.")
+else:
+    print("ImageMagick is not installed on the system.")
+    if input('open the webpage to install (Y/N)? ').lower == "y":
+        webbrowser.open("https://imagemagick.org/script/download.php")
+        print("Once you have installed imagemagick from this url, please re-run this progam, and if the not installed message re-appears, ensure the magick executable is on path or if using portable, in the same directory as this .py file.")
+    else:
+        print("You declined the offer. The current version you're using is: INCOMPATIBLE without installing imagemagick. Please install it, and restart this program. If you see this message though you installed it, ensure it is on PATH, or is the right program type. I strongly recommend downloading from the URL provided by me, as I can verify it's authenticity.")
+        sys.exit(1)
 a_accelerator = "libx264"
 #callback functions defined here
 def getfont():
