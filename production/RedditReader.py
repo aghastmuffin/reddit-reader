@@ -9,14 +9,14 @@ from moviepy.video.compositing.concatenate import concatenate_videoclips
 from vosk import SetLogLevel, KaldiRecognizer, Model
 import ctypes
 from ctypes import wintypes
-from moviepy.config import ImageMagickTools
 import webbrowser
 
 headers = {'User-Agent': r'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
 
-if ImageMagickTools.available():
+try:
+    os.system("magick")
     print("ImageMagick is installed on the system.")
-else:
+except:
     print("ImageMagick is not installed on the system.")
     if input('open the webpage to install (Y/N)? ').lower == "y":
         webbrowser.open("https://imagemagick.org/script/download.php")
